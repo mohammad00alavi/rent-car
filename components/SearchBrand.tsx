@@ -19,7 +19,7 @@ const SearchBrand: React.FC<SearchBrandProps> = (props) => {
               );
     return (
         <div className="search-brand">
-            <Combobox>
+            <Combobox value={props.brand} onChange={props.setBrand}>
                 <div className="w-full relative">
                     <Combobox.Button className="absolute top-[14px]">
                         <Image
@@ -29,38 +29,39 @@ const SearchBrand: React.FC<SearchBrandProps> = (props) => {
                             height={20}
                             className="ml-4"
                         />
-                        <Combobox.Input
-                            className={"search-brand__input"}
-                            placeholder="Volkswagen"
-                            displayValue={(brand: string) => brand}
-                            onChange={(e) => e.target.value}
-                        />
-                        <Transition
-                            as={Fragment}
-                            leave="transition ease-in duration-100"
-                            leaveFrom="opacity-100"
-                            leaveTo="opacity-0 "
-                            afterLeave={() => setQuery("")}
-                        >
-                            <Combobox.Options>
-                                {filterBrands.map((item) => (
-                                    <Combobox.Option
-                                        key={item}
-                                        value={item}
-                                        className={({ active }) =>
-                                            `relative search-brand__option ${
-                                                active
-                                                    ? "bg-primary-blue text-white"
-                                                    : "text-gray-900"
-                                            }`
-                                        }
-                                    >
-                                        {item}
-                                    </Combobox.Option>
-                                ))}
-                            </Combobox.Options>
-                        </Transition>
                     </Combobox.Button>
+
+                    <Combobox.Input
+                        className={"search-brand__input"}
+                        placeholder="Volkswagen"
+                        displayValue={(item: string) => item}
+                        onChange={(event) => setQuery(event.target.value)}
+                    />
+                    <Transition
+                        as={Fragment}
+                        leave="transition ease-in duration-100"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0 "
+                        afterLeave={() => setQuery("")}
+                    >
+                        <Combobox.Options>
+                            {filterBrands.map((item) => (
+                                <Combobox.Option
+                                    key={item}
+                                    value={item}
+                                    className={({ active }) =>
+                                        `relative search-brand__option ${
+                                            active
+                                                ? "bg-primary-blue text-white"
+                                                : "text-gray-900"
+                                        }`
+                                    }
+                                >
+                                    {item}
+                                </Combobox.Option>
+                            ))}
+                        </Combobox.Options>
+                    </Transition>
                 </div>
             </Combobox>
         </div>

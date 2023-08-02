@@ -6,5 +6,16 @@ import Logo from "./Logo";
 import Filter from "./Filter";
 import SearchBar from "./SearchBar";
 import SearchBrand from "./SearchBrand";
+import CarBox from "./ CarBox";
 
-export { Hero, Button, Navbar, Footer, Logo, SearchBar, Filter, SearchBrand };
+export {
+    Hero,
+    Button,
+    Navbar,
+    Footer,
+    Logo,
+    SearchBar,
+    Filter,
+    SearchBrand,
+    CarBox,
+};

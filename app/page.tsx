@@ -1,7 +1,11 @@
-import { Filter, Hero, SearchBar, } from "@/components";
-import Image from "next/image";
+import { CarBox, Filter, Hero, SearchBar } from "@/components";
+import { fetchCars } from "@/fetchers/fetchCars";
+import { getServerSideProps as getCarsData } from "@/fetchers/getCarsData";
 
-export default function Home() {
+export default async function Home() {
+    const allCars = await fetchCars();
+    const isEmptyData =
+        !Array.isArray(allCars) || allCars?.length < 1 || !allCars;
     return (
         <main className="ovelflow-hidden">
             <Hero />
@@ -19,7 +23,24 @@ export default function Home() {
                         <Filter title="year" />
                     </div>
                 </div>
+                {!isEmptyData ? (
+                    <section>
+                        <div className="home__cars-wrapper">
+                            {allCars?.map((item) => (
+                                <CarBox data={item} />
+                            ))}
+                        </div>
+                    </section>
+                ) : (
+                    <div className="home__error-container">
+                        <h2 className="text-black text-xl font-bold">
+                            No cars found
+                        </h2>
+                    </div>
+                )}
             </div>
         </main>
     );
 }
+
+/* export const getServerSideProps = getCarsData; */
