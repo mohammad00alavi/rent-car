@@ -6,6 +6,7 @@ import { calculateRentPrice } from "@/utils/calculateRentPrice";
 import { Button, CarInfo } from ".";
 import { Car } from "@/types/Car";
 import { CarDetailsContainer } from "@/elements/CarBoardElements";
+import { generateCarImageUrl } from "@/fetchers/generateCarImageUrl";
 
 interface CarBoxProps {
     data: Car;
@@ -28,7 +29,7 @@ const CarBox: React.FC<CarBoxProps> = ({ data }) => {
                 <span className="self-end text-[14px] font-medium">/day</span>
             </p>
             <div className="relative w-full h-40 my-3 object-contain">
-                <Image src="/hero.png" alt="car picture" fill priority />
+                <Image src={generateCarImageUrl(data)} alt="car picture" fill priority />
             </div>
             <div className="relative flex w-full mt-2">
                 <CarDetailsContainer
@@ -50,7 +51,11 @@ const CarBox: React.FC<CarBoxProps> = ({ data }) => {
                     />
                 </div>
             </div>
-            <CarInfo />
+            <CarInfo
+                isOpen={isOpen}
+                closeModal={() => setIsOpen(false)}
+                data={data}
+            />
         </div>
     );
 };

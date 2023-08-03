@@ -9,6 +9,7 @@ import SearchBrand from "./SearchBrand";
 import CarBox from "./CarBox";
 import CarInfo from "./CarInfo";
 import CarBoxElement from "./CarBoxElement";
+import SearchButton from "./SearchButton";
 
 export {
     Hero,
@@ -22,4 +23,5 @@ export {
     CarBox,
     CarBoxElement,
     CarInfo,
+    SearchButton,
 };

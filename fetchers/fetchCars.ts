@@ -1,13 +1,11 @@
 import getConfig from "next/config";
 
 export const fetchCars = async () => {
-    /* const { publicRuntimeConfig } = getConfig(); */
     const URL = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=camry`;
     const options = {
         method: "GET",
         headers: {
-            "X-RapidAPI-Key":
-                "78992739ffmsh282624d174d2e23p1e4934jsn6f53aae9ca7d",
+            "X-RapidAPI-Key": process.env.NEXT_PUBLIC_CAR_API_KEY || "",
             "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
         },
     };
