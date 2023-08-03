@@ -6,4 +6,6 @@ export interface ButtonProps {
     type: "submit" | "button";
     innerStyles: string;
     handleClick?: MouseEventHandler<HTMLButtonElement>;
+    textStyles?: string;
+    rightIcon?: string;
 }

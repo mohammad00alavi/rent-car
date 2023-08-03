@@ -6,7 +6,9 @@ import Logo from "./Logo";
 import Filter from "./Filter";
 import SearchBar from "./SearchBar";
 import SearchBrand from "./SearchBrand";
-import CarBox from "./ CarBox";
+import CarBox from "./CarBox";
+import CarInfo from "./CarInfo";
+import CarBoxElement from "./CarBoxElement";
 
 export {
     Hero,
@@ -18,4 +20,6 @@ export {
     Filter,
     SearchBrand,
     CarBox,
+    CarBoxElement,
+    CarInfo,
 };
