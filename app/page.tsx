@@ -2,7 +2,6 @@ import { Hero, SearchBar, CustomFilter } from "@/components";
 import { fuels, yearsOfProduction } from "@/config/config";
 import CarsBoard from "@/elements/CarBoardElements/CarsBoard";
 import { fetchCars } from "@/fetchers/fetchCars";
-import { getServerSideProps as getCarsData } from "@/fetchers/getCarsData";
 import Provider from "@/providers/Provider";
 import { AppContextProps } from "@/types/AppContextProps";
 import { HomeProps } from "@/types/HomeProps";
@@ -18,7 +17,7 @@ export default async function Home({ searchParams }: HomeProps) {
     const isEmptyData =
         !Array.isArray(carData) || carData?.length < 1 || !carData;
     return (
-        <main className="ovelflow-hidden">
+        <main className="overflow-hidden">
             <Hero />
             <Provider<AppContextProps> appProps={carData}>
                 <div
@@ -55,4 +54,3 @@ export default async function Home({ searchParams }: HomeProps) {
         </main>
     );
 }
-/* export const getServerSideProps = getCarsData; */

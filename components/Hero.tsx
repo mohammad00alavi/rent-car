@@ -5,7 +5,17 @@ import { Button } from ".";
 import Image from "next/image";
 
 const Hero = () => {
-    const clickHandler = () => {};
+    const clickHandler = () => {
+        const element = document.getElementById("discover");
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+            });
+        }
+    };
+
     return (
         <div className="hero">
             <div className="flex-1 pt-36 padding-x">
@@ -18,7 +28,7 @@ const Hero = () => {
                     title="View Options"
                     disabled={false}
                     type="button"
-                    innerStyles="bg-primary-blue text-white rounded-full mt-10"
+                    innerStyles="bg-emerald-300 text-black rounded-full mt-10"
                     handleClick={clickHandler}
                 />
             </div>

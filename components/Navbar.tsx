@@ -14,7 +14,7 @@ const Navbar = () => {
                     title="Sign In"
                     disabled={false}
                     type="button"
-                    innerStyles="text-primary-blue rounded-full bg-white min-w-[130px]"
+                    innerStyles="text-black rounded-full bg-white min-w-[130px]"
                 />
             </nav>
         </header>

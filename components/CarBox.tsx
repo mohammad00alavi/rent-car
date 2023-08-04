@@ -29,7 +29,13 @@ const CarBox: React.FC<CarBoxProps> = ({ data }) => {
                 <span className="self-end text-[14px] font-medium">/day</span>
             </p>
             <div className="relative w-full h-40 my-3 object-contain">
-                <Image src={generateCarImageUrl(data)} alt="car picture" fill priority />
+                <Image
+                    src={generateCarImageUrl(data)}
+                    alt="car picture"
+                    fill
+                    priority
+                    className={"object-contain"}
+                />
             </div>
             <div className="relative flex w-full mt-2">
                 <CarDetailsContainer
@@ -42,11 +48,8 @@ const CarBox: React.FC<CarBoxProps> = ({ data }) => {
                         title={"View more"}
                         disabled={false}
                         type={"button"}
-                        innerStyles={
-                            "w-full py-[16px] rounded-full bg-primary-blue"
-                        }
-                        textStyles="text-white text-[14px] leading-[17px] font-bold"
-                        rightIcon="/right-arrow.svg"
+                        innerStyles={"w-full py-16 rounded-full bg-emerald-300"}
+                        textStyles="text-black text-[14px] leading-[17px] font-bold"
                         handleClick={() => setIsOpen(true)}
                     />
                 </div>

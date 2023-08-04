@@ -44,7 +44,10 @@ const SearchBrand: React.FC<SearchBrandProps> = (props) => {
                         leaveTo="opacity-0 "
                         afterLeave={() => setQuery("")}
                     >
-                        <Combobox.Options>
+                        <Combobox.Options
+                            className="search-brand__options z-20"
+                            static
+                        >
                             {filterBrands.map((item) => (
                                 <Combobox.Option
                                     key={item}
@@ -52,7 +55,7 @@ const SearchBrand: React.FC<SearchBrandProps> = (props) => {
                                     className={({ active }) =>
                                         `relative search-brand__option ${
                                             active
-                                                ? "bg-primary-blue text-white"
+                                                ? "bg-emerald-300 text-black"
                                                 : "text-gray-900"
                                         }`
                                     }
