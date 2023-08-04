@@ -18,7 +18,7 @@ const Hero = () => {
                     title="View Options"
                     disabled={false}
                     type="button"
-                    innerStyles="bg-primary-blue text-white rounded-full mt-10"
+                    innerStyles="bg-emerald-300 text-black rounded-full mt-10"
                     handleClick={clickHandler}
                 />
             </div>

@@ -1,4 +1,3 @@
-import getConfig from "next/config";
 import { FilterProps } from "@/types/FilterProps";
 
 export const fetchCars = async (filters: FilterProps) => {
@@ -15,11 +14,6 @@ export const fetchCars = async (filters: FilterProps) => {
         const response = await fetch(URL, options);
         const result = await response.json();
         return result;
-        /* return {
-            imgSrc: picture.urls.raw + "&w=1920&h=1080",
-            description: picture.description,
-            color: picture.color,
-        }; */
     } catch (error) {
         throw new Error("Network error, please try again later.");
     }

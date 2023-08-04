@@ -50,7 +50,7 @@ const CustomFilter: React.FC<CustomFilterProps> = ({ title, options }) => {
                                     className={({ active }) =>
                                         `relative cursor-default select-none py-2 px-4 ${
                                             active
-                                                ? "bg-primary-blue text-white"
+                                                ? "bg-emerald-300 text-black"
                                                 : "text-gray-900"
                                         }`
                                     }

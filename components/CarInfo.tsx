@@ -34,7 +34,7 @@ const CarInfo: React.FC<CarInfoProps> = ({ isOpen, closeModal, data }) => {
                                 <Dialog.Panel className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5">
                                     <button
                                         type="button"
-                                        className="absolute top-2 right-2 z-10 w-fit p-2 bg-primary-blue-100 rounded-full"
+                                        className="absolute top-2 right-2 z-10 w-fit p-2 bg-emerald-50 rounded-full"
                                         onClick={closeModal}
                                     >
                                         <Image
@@ -47,7 +47,7 @@ const CarInfo: React.FC<CarInfoProps> = ({ isOpen, closeModal, data }) => {
                                     </button>
 
                                     <div className="flex-1 flex flex-col gap-3">
-                                        <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
+                                        <div className="relative w-full h-40 bg-emerald-50 bg-cover bg-center rounded-lg">
                                             <Image
                                                 src={generateCarImageUrl(data)}
                                                 alt="car model"
@@ -58,7 +58,7 @@ const CarInfo: React.FC<CarInfoProps> = ({ isOpen, closeModal, data }) => {
                                         </div>
 
                                         <div className="flex gap-3">
-                                            <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
+                                            <div className="flex-1 relative w-full h-24 bg-emerald-50 rounded-lg">
                                                 <Image
                                                     src={generateCarImageUrl(
                                                         data,
@@ -70,7 +70,7 @@ const CarInfo: React.FC<CarInfoProps> = ({ isOpen, closeModal, data }) => {
                                                     className="object-contain"
                                                 />
                                             </div>
-                                            <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
+                                            <div className="flex-1 relative w-full h-24 bg-emerald-50 rounded-lg">
                                                 <Image
                                                     src={generateCarImageUrl(
                                                         data,
@@ -82,7 +82,7 @@ const CarInfo: React.FC<CarInfoProps> = ({ isOpen, closeModal, data }) => {
                                                     className="object-contain"
                                                 />
                                             </div>
-                                            <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
+                                            <div className="flex-1 relative w-full h-24 bg-emerald-50 rounded-lg">
                                                 <Image
                                                     src={generateCarImageUrl(
                                                         data,

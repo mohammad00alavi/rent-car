@@ -22,7 +22,7 @@ const ShowMore: React.FC<ShowMoreProps> = ({ pageNumber, isNextPage }) => {
                     title="Show More"
                     disabled={false}
                     type={"button"}
-                    innerStyles={"bg-primary-blue rounded-full text-white"}
+                    innerStyles={"bg-emerald-300 rounded-full text-black"}
                     handleClick={handleNavigation}
                 />
             )}

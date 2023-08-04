@@ -15,7 +15,6 @@ const SearchButton: React.FC<SearchButtonProps> = ({ otherClasses }) => {
                 height={40}
                 className="object-contain"
             />
-            SearchButton
         </button>
     );
 };
