@@ -5,7 +5,17 @@ import { Button } from ".";
 import Image from "next/image";
 
 const Hero = () => {
-    const clickHandler = () => {};
+    const clickHandler = () => {
+        const element = document.getElementById("discover");
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+                inline: "nearest",
+            });
+        }
+    };
+
     return (
         <div className="hero">
             <div className="flex-1 pt-36 padding-x">
