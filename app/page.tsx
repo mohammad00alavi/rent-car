@@ -1,12 +1,20 @@
-import { Filter, Hero, SearchBar } from "@/components";
+import { Hero, SearchBar, CustomFilter } from "@/components";
+import { fuels, yearsOfProduction } from "@/config/config";
 import CarsBoard from "@/elements/CarBoardElements/CarsBoard";
 import { fetchCars } from "@/fetchers/fetchCars";
 import { getServerSideProps as getCarsData } from "@/fetchers/getCarsData";
 import Provider from "@/providers/Provider";
 import { AppContextProps } from "@/types/AppContextProps";
+import { HomeProps } from "@/types/HomeProps";
 
-export default async function Home() {
-    const carData = await fetchCars();
+export default async function Home({ searchParams }: HomeProps) {
+    const carData = await fetchCars({
+        brand: searchParams.brand || "",
+        year: searchParams.year || 2022,
+        fuel: searchParams.fuel || "",
+        limit: searchParams.limit || 10,
+        model: searchParams.model || "",
+    });
     const isEmptyData =
         !Array.isArray(carData) || carData?.length < 1 || !carData;
     return (
@@ -26,12 +34,15 @@ export default async function Home() {
                     <div className="home__filters">
                         <SearchBar />
                         <div className="home__filter-container">
-                            <Filter title="fuel" />
-                            <Filter title="year" />
+                            <CustomFilter title="fuel" options={fuels} />
+                            <CustomFilter
+                                title="year"
+                                options={yearsOfProduction}
+                            />
                         </div>
                     </div>
                     {!isEmptyData ? (
-                        <CarsBoard />
+                        <CarsBoard searchParams={searchParams} data={carData} />
                     ) : (
                         <div className="home__error-container">
                             <h2 className="text-black text-xl font-bold">

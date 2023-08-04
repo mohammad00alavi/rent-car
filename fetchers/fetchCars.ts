@@ -1,7 +1,9 @@
 import getConfig from "next/config";
+import { FilterProps } from "@/types/FilterProps";
 
-export const fetchCars = async () => {
-    const URL = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=camry`;
+export const fetchCars = async (filters: FilterProps) => {
+    const { brand, year, model, limit, fuel } = filters;
+    const URL = `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${brand}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
     const options = {
         method: "GET",
         headers: {

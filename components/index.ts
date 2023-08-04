@@ -3,7 +3,7 @@ import Button from "./Button";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Logo from "./Logo";
-import Filter from "./Filter";
+import CustomFilter from "./CustomFilter";
 import SearchBar from "./SearchBar";
 import SearchBrand from "./SearchBrand";
 import CarBox from "./CarBox";
@@ -18,7 +18,7 @@ export {
     Footer,
     Logo,
     SearchBar,
-    Filter,
+    CustomFilter,
     SearchBrand,
     CarBox,
     CarBoxElement,

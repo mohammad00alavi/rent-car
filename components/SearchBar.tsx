@@ -2,12 +2,37 @@
 import React, { useState } from "react";
 import { SearchBrand, SearchButton } from ".";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const SearchBar = () => {
     const [brand, setBrand] = useState("");
     const [model, setModel] = useState("");
+    const router = useRouter();
 
-    const handleSearch = () => {};
+    const updateSearchParams = (model: string, brand: string) => {
+        const searchParams = new URLSearchParams(window.location.search);
+        if (model) {
+            searchParams.set("model", model);
+        } else {
+            searchParams.delete("model");
+        }
+        if (brand) {
+            searchParams.set("brand", brand);
+        } else {
+            searchParams.delete("brand");
+        }
+        const newPathname = `${
+            window.location.pathname
+        }?${searchParams.toString()}`;
+        router.push(newPathname, { scroll: false });
+    };
+    const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (brand === "" && model === "") {
+            return alert("Please fill in the search bar");
+        }
+        updateSearchParams(model.toLowerCase(), brand.toLowerCase());
+    };
     return (
         <form className="searchbar" onSubmit={handleSearch}>
             <div className="searchbar__item ">
